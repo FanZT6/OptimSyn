@@ -1,7 +1,6 @@
-# OptimSyn
+# OptimSyn [ICLR 2026]
 
-**Influence-Guided Rubrics Optimization for Synthetic Data Generation**
-ICLR 2026 · [arXiv:2604.00536](https://arxiv.org/abs/2604.00536)
+**Influence-Guided Rubrics Optimization for Synthetic Data Generation** [arXiv:2604.00536](https://arxiv.org/abs/2604.00536)
 
 ---
 
@@ -265,5 +264,3 @@ This project builds on top of the following open-source frameworks:
 
 - **[LESS](https://github.com/princeton-nlp/LESS)** — the gradient-based data selection method whose influence estimator underpins our reward signal.  
   > Xia et al., *LESS: Selecting Influential Data for Targeted Instruction Tuning*, ICML 2024.
-
-Code: <https://github.com/FanZT6/OptimSyn>
