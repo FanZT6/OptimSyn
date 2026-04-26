@@ -1,0 +1,51 @@
+### model
+model_name_or_path: Qwen2.5-7B
+
+### method
+stage: sft
+do_train: true
+finetuning_type: full
+deepspeed: ds_config_zero2_llama_factory.json
+
+### dataset
+dataset_dir: 
+dataset: MedQuAD
+cutoff_len: 16384
+overwrite_cache: true
+preprocessing_num_workers: 16
+
+### output
+output_dir: 
+logging_steps: 50
+save_strategy: steps
+save_steps: 200
+plot_loss: true
+overwrite_output_dir: true
+
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 1
+learning_rate: 1.0e-5
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.03
+weight_decay: 0.1
+adam_beta2: 0.95
+bf16: true
+ddp_timeout: 180000000
+load_best_model_at_end: false
+seed: 42
+disable_shuffling: True
+flash_attn: fa2
+
+#### generation config
+max_length: 16384
+
+# ### eval
+val_size: 0.05
+per_device_eval_batch_size: 1
+eval_strategy: steps
+eval_steps: 100
+
+# tensorboard
+report_to: tensorboard
+logging_dir: 

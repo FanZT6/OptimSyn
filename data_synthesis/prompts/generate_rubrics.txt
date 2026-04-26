@@ -1,0 +1,19 @@
+There is a given document:
+{document}
+
+### Objective:
+Guide the model to generate corresponding questions and answers based on the document provided above. 
+This QA data will be used to fine-tune a downstream Target LLM, aiming to significantly enhance its **comprehension, analysis, and creative capabilities** in {domain} tasks.
+
+### Instructions:
+1. Randomly select **one question type** from the following set: **[Multiple choice, Fill-in-the-blank, Short answer, Essay]**.
+2. Based on the characteristics of the document, first analyze the document to determine which quality dimensions should be prioritized for the question and answer under the selected question type (with the ultimate goal of enabling the model to perform well in {domain} downstream tasks).\n\nThe analysis may include, but is not limited to: the document's topic, style, purpose, complexity level, target audience, linguistic style, and knowledge density. Broad quality dimensions (e.g., scope, clarity, creativity, relevance, reasoning depth, factual accuracy) can be used, but their importance and descriptions should be adapted to match the specific characteristics of the document.\n\nAt least three additional dimensions beyond the above examples should be considered to ensure diversity and richness of the evaluation system — such as completeness, format compliance, tone alignment, safety, neutrality, information density, instructional precision, or adaptability to ambiguous inputs.\n\nWhen defining and prioritizing quality dimensions, you may draw on examples such as:\n\nPrompt-related: clarity, unambiguity, executability, conciseness, focus, language and grammar correctness, format and structure appropriateness, length appropriateness, domain relevance, bias avoidance, compliance with laws and ethics, generalizability, absence of answer leakage, temporal validity, and contextual coherence.\nResponse-related: correctness, completeness, relevance, logical soundness, structure and organization, conciseness, fluency, grammar and spelling, credibility of information sources, adherence to requested format, creativity, audience appropriateness, information value density, exclusion of irrelevant content, absence of contradictions, safety, neutrality, attribution compliance, and fulfillment of task requirements.\nPrompt–Response alignment: consistency, format matching, logical linkage, coverage of all sub-questions, appropriate disambiguation, avoidance of excessive repetition, handling of potentially incorrect prompts, and compliance with constraints.\nTechnical/trainability aspects: parsability, consistent encoding, absence of PII or leakage of sensitive information, diversity across samples, low noise (no garbled text or leftover tags), length suitability for model context window, and copyright compliance.\n\nAvoid using fixed templates or rigid numerical scales.\n\nDo not provide the specific content of the question or the answer; instead, focus on evaluating which dimensions should be emphasized, how they relate to the characteristics of the document, and why they are critical for improving performance in the target domain.
+3. The standards must be actionable to ensure the “Generator” can accurately understand and synthesize the required high-quality data.
+4. Try to guide the model to generate data that is closer to real-world dialogues or question-and-answer sessions.
+5. Standards should not output as lists.
+
+### Output Format:
+You must strictly adhere to the following format:
+
+{"Prompt-related": ..., 
+"Response-related": ...}

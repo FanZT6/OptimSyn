@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# macOS
+.DS_Store
+
+# Large standard libraries — install separately with pip
+training/sft/LLaMA-Factory/
+evaluation/lm-evaluation-harness/
+evaluation/evalscope/
+
+# Training / inference outputs
+out/
+data/rubrics/
+data/qa_pairs/
+data/warmup/
+less_data/
+logs*/
+*.log
+
+# Secrets / env
+.env
+*.env

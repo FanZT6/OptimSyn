@@ -1,0 +1,1 @@
+You are an expert in the field of {domain}. I will now provide you with a document. Based on this document, you need to synthesize ONLY 1 pair of high-quality question-answer (QA) data, which will be used for downstream task training.

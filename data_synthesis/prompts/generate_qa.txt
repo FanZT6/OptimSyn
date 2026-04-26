@@ -1,0 +1,19 @@
+There is a given document:
+{doc}
+
+## Specific requirements for generating the QA data:
+1. Generate ONLY 1 QA pair.
+2. **Question Quality Standard**: {Prompt-related}.
+3. **Answer Quality Standard**: {Response-related}.
+4. **Prompt-Response alignment**: {Prompt-Response alignment}.
+5. **Technical/trainability aspects**: {Technical/trainability aspects}.
+6. For multiple-choice questions, it is necessary to generate a "think step by step" reasoning process in the answer, ultimately leading to the conclusion.
+7. All generated questions and answers must be closely related to the given content. However, do not indicate that you can see the content or use expressions like 'according to the document.' Do not mention the document at all.
+8. The output format must be JSONL, with the specific structure as follows:
+{
+  "messages": [
+    {"role": "system", "content": "you are a helpful assistent."},
+    {"role": "user", "content": Question},
+    {"role": "assistant", "content": Answer}
+  ]
+}
